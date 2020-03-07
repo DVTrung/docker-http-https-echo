@@ -23,7 +23,7 @@ app.all('*', (req, res) => {
     path: req.path,
     headers: req.headers,
     method: req.method,
-    body: req.body,
+    body: JSON.parse(req.body === "" ? "{}" : req.body),
     cookies: req.cookies,
     fresh: req.fresh,
     hostname: req.hostname,
